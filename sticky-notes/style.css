@@ -1,0 +1,81 @@
+#notesContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f1f1;
+  min-height: 50vh;
+  padding: 10px;
+  text-align: center;
+  height: auto;
+}
+
+.note {
+  display: flex;
+  flex-direction: column;
+  align-items: top;
+  height: 100px;
+  min-width: 25vw;
+  width: auto;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  text-align: left;
+}
+
+.noteCloseBtn {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  cursor: pointer;
+}
+.noteCloseBtn > span {
+  background-color: red;
+  width: 5%;
+  text-align: center;
+  color: white;
+}
+
+#noteInput {
+  display: flex;
+  flex-direction: column;
+  align-items: top;
+  height: 100px;
+  width: 20vw;
+  align-self: center;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  text-align: left;
+  background-color: #fefec0;
+
+  & #addNote {
+    align-self: flex-end;
+    text-align: right;
+    background-color: transparent;
+    border: none;
+    font-size: large;
+    cursor: pointer;
+  }
+  & #addNote:hover {
+    transform: scale(120%);
+  }
+  & textarea {
+    background: transparent;
+    border: none;
+    min-height: 80%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+  & textarea:focus {
+    outline: none;
+  }
+}
+
+#notes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
