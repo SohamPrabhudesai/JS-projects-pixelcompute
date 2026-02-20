@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+
+    <title>Event Invitation</title>
+  </head>
+  <body>
+    <div class="container">
+      <form id="form">
+        <h1>Create an Event Invite</h1>
+        <label for="name">Event Name</label>
+        <input type="text" id="name" name="name" placeholder="Event Name" />
+        <label for="date">Event Date</label>
+        <input type="date" id="date" name="date" />
+        <label for="start">Start Time</label>
+        <input type="time" id="start" name="start" />
+        <label for="end">End Time</label>
+        <input type="time" id="end" name="end" />
+        <label for="desc">Event Description</label>
+        <textarea
+          id="desc"
+          name="desc"
+          placeholder="Brief description of the event "
+        ></textarea>
+        <label for="location">Location</label>
+        <input
+          type="text"
+          id="location"
+          name="location"
+          placeholder="Location of the event"
+        />
+        <input type="submit" value="Create event" id="submit" />
+      </form>
+    </div>
+    <dialog id="emptyFieldWarningDialog">
+      <div id="dialogMessageContainer">
+        <span id="closeDialog">❌</span>
+        <p>Please fill in all the fields</p>
+      </div>
+    </dialog>
+    <section class="hidden">
+        <div id="eventInvitation">
+        <header>
+        <h1>YOU ARE INVITED</h1>
+        <p>TO JOIN THE</p>
+        <h2 id="eventName"></h2>
+        </header>
+        <div id="eventDetails">
+            <p id="eventDate"></p>
+            <p id="eventTime">
+             
+            </p>
+            <p id="eventLocation"></p>
+            <p id="eventDesc"></p>
+        </div>
+        
+
+    </section>
+  </body>
+</html>
