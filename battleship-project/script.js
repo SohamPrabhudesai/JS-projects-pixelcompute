@@ -78,4 +78,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
   runGame();
+  const resetBtn = document.getElementById("reset-game");
+  resetBtn.addEventListener("click", () => {
+    window.location.reload();
+  });
 });
