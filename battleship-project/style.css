@@ -2,7 +2,7 @@ body {
   background-color: tomato;
   display: flex;
   flex-direction: column;
-  gap: 5vh;
+  gap: 2vh;
   color: white;
   text-align: center;
 }
