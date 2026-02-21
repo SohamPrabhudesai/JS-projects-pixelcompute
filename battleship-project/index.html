@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="dialog-container hidden">
+      <div id="game-over-dialog">
+        <p>This page says</p>
+        <h2></h2>
+        <button id="close-dialog">Close</button>
+      </div>
+    </div>
+
+    <h1 id="battleship-heading">Battleship</h1>
+    <h2>Game rules</h2>
+    <ol>
+      <li>Click on the cells to reveal the image hidden behind them.</li>
+      <li>There are 5 ships hidden in the game.</li>
+      <li>
+        You win if you can find all ships in less than 8 clicks, else you lose.
+      </li>
+    </ol>
+    <div class="battleship-grid">
+      <div class="grid-row">
+        <div class="grid-box"></div>
+        <div class="grid-box"></div>
+        <div class="grid-box"></div>
+        <div class="grid-box"></div>
+      </div>
+      <div class="grid-row">
+        <div class="grid-box"></div>
+        <div class="grid-box"></div>
+        <div class="grid-box"></div>
+        <div class="grid-box"></div>
+      </div>
+      <div class="grid-row">
+        <div class="grid-box"></div>
+        <div class="grid-box"></div>
+        <div class="grid-box"></div>
+        <div class="grid-box"></div>
+      </div>
+      <div class="grid-row">
+        <div class="grid-box"></div>
+        <div class="grid-box"></div>
+        <div class="grid-box"></div>
+        <div class="grid-box"></div>
+      </div>
+    </div>
+  </body>
+</html>
