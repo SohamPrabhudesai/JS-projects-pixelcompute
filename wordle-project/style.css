@@ -1,0 +1,70 @@
+body {
+  background-color: #f4f4f4;
+  font-family: "Arial";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: auto;
+  margin: auto;
+  padding: 3vw;
+  background-color: white;
+}
+
+.words-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px;
+}
+
+.word-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.cell {
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  height: 4.5rem;
+  width: 4.5rem;
+  text-transform: uppercase;
+}
+
+input {
+  padding: 10px;
+  font-size: 1rem;
+  margin: 10px;
+  width: 200px;
+}
+
+button {
+  padding: 10px;
+  cursor: pointer;
+  font: bold;
+}
+
+.correct {
+  background-color: green;
+}
+.present {
+  background-color: yellow;
+}
+.absent {
+  background-color: gray;
+}
