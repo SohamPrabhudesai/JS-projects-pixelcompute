@@ -54,8 +54,8 @@ document.querySelectorAll(".btn").forEach((btn) => {
       doClear = true;
     } else if (id === "equals") {
       if (firstNum && oprn) {
-        const a = firstNum;
-        const b = display.value;
+        const a = Number(firstNum);
+        const b = Number(display.value);
 
         if (oprn === "add") display.value = a + b;
         else if (oprn === "subtract") display.value = a - b;
