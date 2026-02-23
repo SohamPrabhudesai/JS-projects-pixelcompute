@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <title>Password generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="generator-container">
+        <h1>Password Generator</h1>
+        <div class="display">
+          <input type="text" id="password" disabled />
+          <button id="copy-btn">Copy password</button>
+        </div>
+
+        <label for="len"
+          >Use the slider and select options to lengthen your password
+          (6-24)</label
+        >
+        <div class="slider-container">
+          <input type="range" id="len" name="len" min="6" max="24" value="9" />
+          <label for="len" id="slider-indicator"></label>
+        </div>
+        <div class="checkboxes">
+          <div class="checkbox">
+            <input type="checkbox" id="numbers" checked />
+            <label for="numbers">Include Numbers</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="letters" checked />
+            <label for="letters">Include Letters</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="case" checked />
+            <label for="case">Include Mixed Case</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="punctuation" checked />
+            <label for="punctuation">Include punctuation</label>
+          </div>
+        </div>
+      </div>
+      <div class="information">
+        <div>
+          <h2>Do you use any of these weak passwords?</h2>
+          <ul>
+            <li>Password</li>
+            <li>123456</li>
+            <li>Qwerty</li>
+            <li>Your name</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Why are those passwords weak?</h2>
+          <ul>
+            <li>They're easy to guess or crack.</li>
+            <li>
+              If one of your logins is compromised, a hacker can access all your
+              services.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="copy-alert" class="hidden">Password copied to clipboard!</div>
+    <div id="checkbox-alert" class="hidden">
+      Please select atleast one checkbox to generate password
+    </div>
+  </body>
+</html>
