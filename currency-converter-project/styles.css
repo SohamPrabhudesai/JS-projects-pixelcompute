@@ -1,0 +1,47 @@
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #f4f4f4;
+  text-shadow: 1px 1px gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  text-align: center;
+  text-shadow: none;
+  background-color: #f8d800;
+  height: fit-content;
+  border-radius: 10px;
+  box-shadow: 2px 2px gray;
+  padding: 20px;
+
+  & p {
+    font-size: 0.9rem;
+  }
+  & #error {
+    color: red;
+    font-style: bold;
+  }
+}
+input {
+  border-radius: 5px;
+  box-shadow: 0.5px 0.5px 2px lightgray;
+}
+input:focus {
+  border: 1px solid #555;
+}
+
+#convert-currency {
+  background-color: #007bff;
+  color: white;
+  box-shadow: 0.5px 0.5px 2px lightgray;
+}
+.hidden {
+  display: none;
+}
