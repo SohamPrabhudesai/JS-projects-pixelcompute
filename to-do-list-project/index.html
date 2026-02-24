@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <title>To Do List</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="search-tasks-container">
+        <h1>To-Do List</h1>
+        <input type="text" id="search-tasks" placeholder="Search tasks..." />
+      </div>
+      <div class="add-tasks-container">
+        <input
+          type="text"
+          name="add-task"
+          id="add-task-desc"
+          placeholder="Add your to-do task..."
+        />
+        <input type="date" name="due-date" id="due-date" />
+        <input type="time" name="due-time" id="due-time" />
+        <button id="add-task">Add Task</button>
+      </div>
+      <div class="tasks-container">
+        <h3>Due Tasks</h3>
+        <div id="tasks"></div>
+      </div>
+      <div class="tasks-container">
+        <h3>Upcoming Tasks</h3>
+        <div id="upcoming-tasks"></div>
+      </div>
+    </div>
+    <div id="error-dialog" class="save-task-background" style="display: none">
+      <div class="error-dialog">
+        <p>Please fill all fields</p>
+        <button
+          onclick="
+            document.getElementById('error-dialog').style.display = 'none'
+          "
+        >
+          OK
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
