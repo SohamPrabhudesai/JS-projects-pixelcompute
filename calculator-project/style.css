@@ -27,6 +27,7 @@ input {
   padding: 10px;
   font-size: 1rem;
   width: 95%;
+  text-align: right;
 }
 
 .calc-grid {
