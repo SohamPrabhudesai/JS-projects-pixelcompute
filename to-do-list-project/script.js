@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   searchInput.addEventListener("input", () => {
     const searchTerm = searchInput.value.trim();
     sessionStorage.setItem("term", searchTerm);
-    searchTask(searchTerm);
+    searchTask();
   });
 });
 
@@ -36,27 +36,35 @@ const handleAddTask = (taskDesc, taskDate, taskTime) => {
     description: taskDesc,
     dueDate: taskDate,
     dueTime: taskTime,
-    completed: false,
   };
   const tasksList = JSON.parse(localStorage.getItem("tasks")) || [];
   console.log(typeof tasksList);
   tasksList.push(task);
   localStorage.setItem("tasks", JSON.stringify(tasksList));
-  renderTaskList();
+  searchTask();
 };
 
 const renderTaskList = (list = null) => {
   const tasksList = list ?? (JSON.parse(localStorage.getItem("tasks")) || []);
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
+  const now = new Date();
 
-  const dueTasks = tasksList.filter((task) => new Date(task.dueDate) < today);
-  const upcomingTasks = tasksList.filter(
-    (task) => new Date(task.dueDate) >= today,
-  );
+  const dueTasks = tasksList
+    .filter((task) => getTaskDateTime(task) < now)
+    .sort((a, b) => getTaskDateTime(a) - getTaskDateTime(b));
+
+  const upcomingTasks = tasksList
+    .filter((task) => getTaskDateTime(task) >= now)
+    .sort((a, b) => getTaskDateTime(a) - getTaskDateTime(b));
 
   renderTask(dueTasks, "tasks", "No due tasks");
   renderTask(upcomingTasks, "upcoming-tasks", "No upcoming tasks");
+};
+
+const getTaskDateTime = (task) => {
+  const [hours, minutes] = task.dueTime.split(":").map(Number);
+  const dt = new Date(task.dueDate);
+  dt.setHours(hours, minutes, 0, 0);
+  return dt;
 };
 
 const renderTask = (tasksList, containerId, emptyMessage) => {
@@ -95,10 +103,11 @@ const deleteTask = (id) => {
   let tasksList = JSON.parse(localStorage.getItem("tasks")) || [];
   tasksList = tasksList.filter((task) => task.id !== id);
   localStorage.setItem("tasks", JSON.stringify(tasksList));
-  searchTask(sessionStorage.getItem("term"));
+  searchTask();
 };
 
-const searchTask = (term) => {
+const searchTask = () => {
+  const term = sessionStorage.getItem("term") ?? "";
   const tasksList = JSON.parse(localStorage.getItem("tasks")) || [];
   const filteredTasks = tasksList.filter((task) =>
     task.description.toLowerCase().includes(term.toLowerCase()),
@@ -133,7 +142,9 @@ const editTask = (id) => {
         task.dueDate = taskDate;
         task.dueTime = taskTime;
         localStorage.setItem("tasks", JSON.stringify(tasksList));
-        searchTask(sessionStorage.getItem("term"));
+        const term = sessionStorage.getItem("term") ?? "";
+        console.log(term);
+        searchTask(term);
       } else {
         document.getElementById("error-dialog").style.display = "flex";
         document.getElementById("error-dialog").style.zIndex = "1002";
