@@ -7,6 +7,10 @@ body {
   overflow-x: hidden;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 #main-container {
   margin: auto;
   height: auto;
