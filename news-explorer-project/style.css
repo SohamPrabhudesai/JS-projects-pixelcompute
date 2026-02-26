@@ -1,0 +1,96 @@
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Lato", sans-serif;
+  overflow-x: hidden;
+}
+
+#main-container {
+  margin: auto;
+  height: auto;
+  width: auto;
+  background-color: white;
+  padding: 3vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 50vw;
+  & h1 {
+    font-size: 2.5rem;
+  }
+}
+
+#search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  color: black;
+  border: 2px solid lightgray;
+  padding: 5px;
+}
+
+#categories-container {
+  display: flex;
+  justify-content: left;
+  gap: 3px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+#categories-container button {
+  min-width: 13%;
+  border: none;
+  height: auto;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: lightgray;
+  color: black;
+}
+.news-card {
+  display: flex;
+  flex-direction: column;
+  background: #f3f3f3;
+  gap: 5px;
+  border-radius: 10px;
+  padding: 10px;
+
+  & h3 {
+    margin-bottom: 0;
+  }
+}
+#news-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  overflow-y: scroll;
+}
+
+.news-card:first-child {
+  grid-column: span 2;
+}
+
+.selected {
+  background-color: black !important; /* important to remember cus i legit forgot about specificity for a second*/
+  color: white !important;
+}
+
+#search:focus {
+  outline: 1px solid gray;
+}
+
+#show {
+  min-width: 13%;
+  border: none;
+  height: auto;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: lightgray;
+  color: black;
+}
+
+.hidden {
+  display: none;
+}
