@@ -87,8 +87,8 @@ body {
   height: auto;
   padding: 5px;
   border-radius: 5px;
-  background-color: lightgray;
-  color: black;
+  background-color: black;
+  color: white;
 }
 
 .hidden {
